@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Ezra's Mp3 Player</title>
+
+  <script language="javascript" type="text/javascript" src="mp3Player/swfobject.js" ></script>   
+</head>
+<body>
+  Version 1<br>
+  <object type="application/x-shockwave-flash" width="400" height="153" data="http://frontgamon.com/ezra/xspf_player.swf?playlist_url=http://frontgamon.com/ezra/ezra.xspf&autoplay=true">
+    <param name="movie" value="http://frontgamon.com/ezra/xspf_player.swf?playlist_url=http://frontgamon.com/ezra/ezra.xspf" />
+  </object>
+
+  <br>
+  <br>
+  Version 2
+  <div id="player">
+    <h1>No flash player!</h1>
+    <p>It looks like you don't have flash player installed. <a href="http://www.macromedia.com/go/getflashplayer" >Click here</a> to go to Macromedia download page.</p>
+  </div>
+
+  <script language="javascript" type="text/javascript">
+  var so = new SWFObject("mp3Player/flashmp3player.swf", "player", "290", "247", "9"); // Location of swf file. You can change player width and height here (using pixels or percents).
+  so.addParam("quality","high");
+  so.addVariable("content_path","mp3"); // Location of a folder with mp3 files (relative to php script).
+  so.addVariable("color_path","mp3Player/default.xml"); // Location of xml file with color settings.
+  so.addVariable("script_path","mp3Player/flashmp3player.php"); // Location of php script.
+  so.write("player");
+  </script> 
+</body>
+</html>

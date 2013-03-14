@@ -1,0 +1,106 @@
+<html>
+<head>
+<style>
+.tabSelected {
+  border-left: solid 1px white;
+  border-top: solid 1px white;
+  border-right: solid 1px black;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 8pt;
+  color: #06364e;
+  height: 20;
+  cursor: default;
+  padding: 4px 10px;
+}
+
+.tabNotSelected {
+  border-left: solid 1px #E0E0E0;
+  border-top: solid 1px #E0E0E0;
+  border-right: solid 1px gray;
+  border-bottom: solid 1px #E0E0E0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 8pt;
+  color: #06364e;
+  height: 20;
+  cursor: default;
+  padding: 4px 10px;
+}
+
+.tabNotSelectable {
+  border-left: solid 1px #E0E0E0;
+  border-top: solid 1px #E0E0E0;
+  border-right: solid 1px gray;
+  border-bottom: solid 1px #E0E0E0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 8pt;
+  color: #06364e;
+  height: 20;
+  cursor: default;
+  background-color: #acacac;
+}
+
+.tabPanelSelected {
+  display: inline;
+}
+
+.tabPanelNotSelected {
+  display: none;
+}
+</style>
+</head>
+<body align="center">
+
+<div style="width: 400px; background-color: #AAAAAA; padding: 10px;">
+  <table width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+      <td id="tab1" class="tabSelected" style="width: 1%;" onclick="switchTabs('1');">
+								Test
+      </td>
+      <td id="tab2" class="tabNotSelected" style="width: 1%;" onclick="switchTabs('2');">
+								Test
+      <td class="tabNotSelectable">
+								&nbsp;
+      </td>
+    </tr>
+  </table>
+  <div id="tabPanels" style="border-bottom: 1px solid white; border-right: 1px solid white; border-left: 1px solid white; padding: 10px;">
+				<div id="panel1" class="tabPanelSelected">
+						Test
+				</div>
+
+				<div id="panel2" class="tabPanelNotSelected">
+						Test2
+				</div>
+		</div>
+</div>
+</body>
+<script type="text/javascript">
+var currID = '1';
+
+function switchTabs(id)
+{
+  var currPanel = document.getElementById("panel" + currID);
+  var currTab = document.getElementById("tab" + currID);
+
+  var newPanel = document.getElementById("panel" + id);
+  var newTab = document.getElementById("tab" + id);
+
+  if (currID != id && newPanel.className == "tabPanelNotSelected" && newTab.className == "tabNotSelected")
+  {
+    currPanel.className = "tabPanelNotSelected";
+    currTab.className = "tabNotSelected";
+
+    newPanel.className = "tabPanelSelected";
+    newTab.className = "tabSelected";
+
+    currID = id;
+  }
+}
+</script>
+</html>

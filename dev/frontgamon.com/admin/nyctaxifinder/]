@@ -1,0 +1,22 @@
+<?php
+require_once(PHP_DEV . 'clases/HtmlControl/HtmlTable.class.php');
+require_once(PHP_DEV . 'classes/NYC/NYCTaxiFactory.class.php'); 
+require_once(PHP_DEV . 'classes/NYC/YellowCabMedallion.class.php');
+?>
+
+<html>
+  <head></head>
+  <body>
+  <?php
+  $yellowCabMedallion = new YellowCabMedallion();
+
+  $taxiFactory = new NYCTaxiFactory($yellowCabMedallion);
+  $taxiFactory->FetchBulkData('1A10');
+  //echo "<pre>" . var_dump($taxiFactory->FactoryResults) . "</pre>";
+  foreach ($taxiFactory->FactoryResults as $licenseNumber => $licenseNumberInfo)
+  {
+    var_dump($licenseNumberInfo);
+  }
+  ?>
+  </body>
+</html>

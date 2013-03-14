@@ -1,0 +1,17 @@
+<html>
+<head>
+<?php
+require_once(PHP_DEV . 'HtmlTabControl.inc.php');
+require_once(PHP_DEV . 'includes.inc.php');
+?>
+</head>
+<body>
+<?php
+$tab = new HtmlTabControl();
+$tab->width = '400px';
+$tab->AddTab('test', 'this is a test');
+$tab->AddTab('test2', 'this is another test');
+$tab->Render();
+?>
+</body>
+</html>

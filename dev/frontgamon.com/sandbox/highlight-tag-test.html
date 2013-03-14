@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<script type='text/javascript' src='/js/jquery-ui/js/jquery-1.3.2.min.js'></script>
+<script type='text/javascript' src='/js/jquery-ui/js/jquery-ui-1.7.2.custom.min.js'></script>
+
+<style>
+.authMouseOver {
+  border: 2px solid red;
+}
+
+.authVariable {
+  border: 2px solid red;
+}
+</style>
+
+<script type='text/javascript'>
+function activateHighlighting() {
+  findTags($('body'));
+}
+
+function findTags(jqObj)
+{
+  $(jqObj).each(function () {
+      $(this).children().each(function() {
+        findTags(this);
+        $(this).mouseover(function() {
+          $(this).addClass('authMouseOver');
+          $(this).parents().each(function () {
+            $(this).removeClass('authMouseOver');
+          });
+          return false;
+        });
+
+        $(this).mouseout(function () {
+          $(this).removeClass('authMouseOver');
+          return false;
+        });
+
+        $(this).click(function() {
+          $(this).toggleClass('authVariable', !$(this).hasClass('authVariable'));
+          return false;
+        });
+      });
+  });
+}
+</script>
+</head>
+
+<body>
+  <div>
+    This is a div
+  </div>
+  <div>
+    <p>
+      This is a p in a div 
+      <span>This is a span in p in a div</span>
+    </p>
+    <div>This text is in a div, sibling to the previous two elements</div>
+  </div>
+
+  <table>
+    <tr>
+      <td>This is table row 1, col 1</td>
+      <td>This is table row 1, col 2</td>
+    </tr>
+  </table>
+
+<input type='button' value='Highlight mode' onclick='activateHighlighting()'>
+</body>
+
+</html>

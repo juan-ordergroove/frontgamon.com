@@ -1,0 +1,28 @@
+body { 
+  background-color: #4dbdf1;
+}
+
+#menu-bar a
+{ 
+  color: white;
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu-bar a:hover
+{ 
+  color: grey;
+}
+
+#menu-line
+{ 
+  padding: 0px 5px;
+}
+
+.fgReg
+{
+  border-top: 1px solid blue; 
+  background-color: #4E9EDC;
+}

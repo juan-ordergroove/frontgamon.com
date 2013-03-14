@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type='text/javascript' src='/js/jQuery/jQuery.js'></script>
+
+    <script type='text/javascript'>
+    function toggleVisibility()
+    {
+      $('#row2').slideToggle('slow');
+      return false;
+    }
+    </script>
+  </head>
+<body>
+
+<table>
+  <tr id='row1'>
+    <td>
+      <a href='#' onclick='toggleVisibility()'>This is visible</a>
+    </td>
+  </tr>
+  <tr id='row2' style='display: none'>
+    <td>
+      Hidden test
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

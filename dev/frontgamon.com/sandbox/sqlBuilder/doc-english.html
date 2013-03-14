@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>
+  SQL Query Builder Doc
+</title>
+</head>
+<body>
+
+SQL Query Builder - PHP Class<Br>
+Author: David Regla Demaree <dreglad@gmail.com><br><br>
+
+Documentation - English<br><br>
+
+This class generates simple SQL queries that can be sent to your SQL Server (i.e. MySQL)<br>
+This way your code is better-looking with no more 'distracting' SQL syntax strings, and much more flexible<br>
+Excelent for dynamic generated queries and AJAX appications, for example.<br><br>
+
+Function reference<br><br>
+
+void __construct ( string queryType )<br>
+
+This function sets the query type to build. This can be "select", "insert", "update", "delete" or "query" It is not case-sensitive.<br>
+The type "query" indicates that an arbitrary provided query will be returned, such as "CREATE ...", "DROP ...", etc.<br>
+See setQuery()<br><br>
+
+void setTable ( string tableName )<br>
+
+This function sets the table name to work on.<br><br>
+
+void addColumn ( string colName )<br>
+
+This function adds one column to the list of columns that will be affected by the query.<br><br>
+
+void setValue ( string value )<br>
+
+This function adds one value corresponding to it's column name, be sure to assign the column names in the same position as the values. The first column you add must be the first value you add.<br>
+For flexibility reasons. this function doesn't add slashes or any escaping, that is your work!<br><br>
+
+void setWhere ( string where )<br>
+
+This function sets the WHERE clause (i.e. earnings < 1000)<br><br>
+
+void setGroupBy ( string groupBy )<br>
+
+This function sets the GROUP BY clause<br><br>
+
+void setHaving ( string havong )<br>
+
+This function sets the HAVING clause<br><br>
+
+void setOrderBy ( string orderBy )<br>
+
+This function sets the ORDER BYclause<br><br>
+
+void setLimit ( string limit )<br>
+
+This function sets the LIMIT clause<br><br>
+
+void setQuery ( string query )<br>
+
+This function sets the query that will be returned if query type "query" is selected when creating the object<br><br>
+
+void showErrors ( bool $showErrors )<br>
+
+With this function you can set whether to print errors or not. Usefull for debugging (default is true)<br><br>
+
+void buildQuery ( void )<br>
+
+If no data is missing for the selected query type, this function will return the built query as a string, otherwise, if showErrors() is set to true (by default) it will print the error message.<br><br>
+
+</body>
+</html>

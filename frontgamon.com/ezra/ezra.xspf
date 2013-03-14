@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<playlist version="1">
+  <trackList>
+    <track>
+      <location>http://frontgamon.com/ezra/mp3Player/mp3/song_1.mp3</location>
+      <creator>Of Montreal</creator>
+      <album>The Sunlandic Twins</album>
+      <title>Requiem for O.M.M.2</title>
+      <image>http://frontgamon.com/ezra/sunlandic_twins.png</image>
+    </track>
+
+    <track>
+      <location>http://frontgamon.com/ezra/mp3Player/mp3/song_2.mp3</location>
+      <creator>Of Montreal</creator>
+      <album>The Sunlandic Twins</album>
+      <title>I Was Never Young</title>
+      <image>http://frontgamon.com/ezra/sunlandic_twins.png</image>
+    </track>
+  </trackList>
+</playlist>
